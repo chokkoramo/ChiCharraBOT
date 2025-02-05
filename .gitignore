@@ -1,2 +1,30 @@
+# Entorno virtual (evita subir dependencias de Python)
+.venv/
+env/
+venv/
+*.pyc
+*.pyo
+__pycache__/
+
+# Configuración específica de tu editor de código
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de logs y caché
+logs/
+*.log
+debug.log
+*.out
+
+# Configuración específica de Git
+.DS_Store  # Archivos de MacOS
+Thumbs.db  # Archivos de Windows
+.git/
+
+# Archivos sensibles (configuración y credenciales)
+config.json
 .env
-src/__pycache__/
+*.sqlite3  # Si usas SQLite
+*.db
