@@ -24,6 +24,7 @@ async def load_cogs():
     await bot.load_extension("core.commands.general")  
     await bot.load_extension("core.commands.fun")      
     await bot.load_extension("core.commands.voice")
+    await bot.load_extension("core.commands.music_player")
     await bot.load_extension("core.commands.pokemon")    
 
 async def run_bot():

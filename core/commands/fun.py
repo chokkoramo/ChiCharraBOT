@@ -15,7 +15,7 @@ class FunCommands(commands.Cog):
             await message.add_reaction('🦟')
             await message.reply(random_word(), mention_author=True)
 
-        if 'hola' in message.content.lower():
+        if 'hola' in message.content.lower() or 'ola' in message.content.lower():
             await message.channel.send(file=discord.File('assets/img/alpargatas.png'))
 
         if 'pirinola' in message.content.lower():

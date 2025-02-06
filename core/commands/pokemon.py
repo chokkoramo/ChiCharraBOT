@@ -33,12 +33,12 @@ class PokeCommands(commands.Cog):
             )
             embed.add_field(name="Peso", value=f"{pokemon_weight} kg", inline=True)
             embed.add_field(name="Altura", value=f"{pokemon_height} m", inline=True)
-            embed.add_field(name="Hp", value=pokemon_stats["hp"], inline=True)
-            embed.add_field(name="Attack", value=pokemon_stats["attack"], inline=True)
-            embed.add_field(name="Defense", value=pokemon_stats["defense"], inline=True)
-            embed.add_field(name="Special-attack", value=pokemon_stats["special-attack"], inline=True)
-            embed.add_field(name="Special-defense", value=pokemon_stats["special-defense"], inline=True)
-            embed.add_field(name="Speed", value=pokemon_stats["speed"], inline=True)
+            embed.add_field(name="HP", value=pokemon_stats["hp"], inline=True)
+            embed.add_field(name="Ataque", value=pokemon_stats["attack"], inline=True)
+            embed.add_field(name="Defensa", value=pokemon_stats["defense"], inline=True)
+            embed.add_field(name="Ataque-Especial", value=pokemon_stats["special-attack"], inline=True)
+            embed.add_field(name="Defensa-Especial", value=pokemon_stats["special-defense"], inline=True)
+            embed.add_field(name="Velocidad", value=pokemon_stats["speed"], inline=True)
             embed.set_thumbnail(url=pokemon_image)
 
             # Enviar el embed

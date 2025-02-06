@@ -7,7 +7,6 @@ class VoiceCommands(commands.Cog):
 
     @commands.command(name="join", aliases=["connect", "summon", "j", "metase"])
     async def join(self, ctx):
-        """El bot se une al canal de voz del usuario."""
         if ctx.author.voice:
             channel = ctx.author.voice.channel
             try:
@@ -22,22 +21,10 @@ class VoiceCommands(commands.Cog):
     async def leave(self, ctx):
         if ctx.voice_client:
             await ctx.voice_client.disconnect()
+            self.song_queue.clear()
             await ctx.send("Me desconecté del canal de voz 👋")
         else:
             await ctx.send("No estoy en ningún canal de voz 😢")
-
-    @commands.command(name="play", aliases=["p"])
-    async def play(self, ctx):
-        if ctx.voice_client:
-            ffmpeg_path = "C:/Users/JUAN CAMILO/Desktop/ffmpeg-2025-01-30-git-1911a6ec26-essentials_build/ffmpeg-2025-01-30-git-1911a6ec26-essentials_build/bin/ffmpeg.exe"
-            source = discord.FFmpegPCMAudio("assets/sounds/audio.mp3", executable=ffmpeg_path)
-            try:
-                ctx.voice_client.play(source)
-                await ctx.send("🎵 Reproduciendo audio...")
-            except Exception as e:
-                await ctx.send(f'Error al reproducir el audio: {e}')
-        else:
-            await ctx.send("No estoy en un canal de voz. Usa `~join` primero.")
 
 async def setup(bot):
     await bot.add_cog(VoiceCommands(bot))
